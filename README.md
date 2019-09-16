@@ -1,4 +1,4 @@
-#certbot-dnsmasq
+# certbot-dnsmasq
 certbot-dnsmasq is a small collection of shell scripts to allow you to complete a DNS-01 challenge for Let's Encrypt or
 other ACME servers. The script spins up a temporary instance of dnsmasq that hosts the appropriate record for the ACME
 server to perform the verification.
