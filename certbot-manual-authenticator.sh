@@ -1,6 +1,11 @@
 #!/bin/bash
 SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
+./check-dependencies.sh
+if [[ "$?" -ne 0 ]]; then
+    exit 1
+fi
+
 if [ -f /tmp/certbot-dnsmasq.pid ]; then
 	kill $(cat /tmp/certbot-dnsmasq.pid)
 fi
