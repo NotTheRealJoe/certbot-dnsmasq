@@ -27,6 +27,11 @@ meaning it is not possible to use certbot-dnsmasq or similar scripts if you are 
 starts with an underscore is within specifications, so there is no reason they shouldn't be able to do this, but
 unfortunately they are not up to standards so you will need to find another provider to get certbot-dnsmasq to work.
 
+## dnsmasq configuration
+In a basic setup, dnsmasq should require no extra configuration to be run by the scripts. If you need to pass extra
+options to dnsmasq, such as an alternative port or listen interface, create dnsmasq.conf in the same directory as the
+scripts and your config will be copied in when the scripts run it.
+
 ## running
 ### issuing a new certificate
 ```bash
