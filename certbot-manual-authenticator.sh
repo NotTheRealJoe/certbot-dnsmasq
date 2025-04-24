@@ -15,10 +15,9 @@ if [ ! -f /tmp/certbot-dnsmasq.conf ]; then
 strict-order
 no-resolv
 no-hosts" > /tmp/certbot-dnsmasq.conf
-fi
-
-if [ -f "$SCRIPT_DIR/dnsmasq.conf" ]; then
-	cat "$SCRIPT_DIR/dnsmasq.conf" >> /tmp/certbot-dnsmasq.conf
+	if [ -f "$SCRIPT_DIR/dnsmasq.conf" ]; then
+		cat "$SCRIPT_DIR/dnsmasq.conf" >> /tmp/certbot-dnsmasq.conf
+	fi
 fi
 
 echo "txt-record=_acme-challenge.$CERTBOT_DOMAIN,\"$CERTBOT_VALIDATION\"" >> /tmp/certbot-dnsmasq.conf
