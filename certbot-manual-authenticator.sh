@@ -21,4 +21,4 @@ no-hosts" > /tmp/certbot-dnsmasq.conf
 fi
 
 echo "txt-record=_acme-challenge.$CERTBOT_DOMAIN,\"$CERTBOT_VALIDATION\"" >> /tmp/certbot-dnsmasq.conf
-dnsmasq -C /tmp/certbot-dnsmasq.conf
+dnsmasq --dns-rr="$CERTBOT_DOMAIN,257,000569737375656C657473656E63727970742E6F7267" -C /tmp/certbot-dnsmasq.conf
